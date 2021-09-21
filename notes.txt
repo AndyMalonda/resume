@@ -1,0 +1,3 @@
+lignes 57 à 70:
+possibilité de mettre un icone new tab
+<span class="iconify text-decoration-none" data-icon="icomoon-free:new-tab"></span>
