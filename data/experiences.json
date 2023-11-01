@@ -1,0 +1,30 @@
+[
+    {
+      "year": "Depuis avril 2022",
+      "text": "Développeur logiciel",
+      "subtext": "Vertech', Chalon-sur-Saône, France",
+      "description": "Conception d'applications complexes pour l'industrie de la verrerie, Test et déploiement de solutions de supervision et de contrôle qualité, Évolution technologique et fonctionnelle, Membre de l'équipe BDD et des outils de reporting",
+      "competences": "Javascript, C# (.NET framework), SQL (Oracle and MySQL), Git, Windows PowerShell, MongoDB, Node.js, Docker, Kendo UI, Bootstrap, NHibernate, OpenXML, Selenium, Méthode agile, JIRA, Documentation WikiJS, Intégration continue via Jenkins"
+    },
+    {
+      "year": "octobre 2019 - août 2020",
+      "text": "Représentant service client",
+      "subtext": "Uber, Lisbonne, Portugal",
+      "description": "COE Specialist II - Point de contact de l'équipe en charge des coursiers partenaires Uber Eats",
+      "competences": "Appels inbound and outbound, Traitement de tickets, Mentoring, Communication interne, Conception et rédaction de process"
+    },
+    {
+      "year": "mars 2018 - octobre 2019",
+      "text": "Représentant service client",
+      "subtext": "Teleperformance, Lisbonne, Portugal",
+      "description": "Travail pour une grande enseigne de voyages en ligne et une entreprise de vente de fournitures de bureau destinée aux professionnels",
+      "competences": "Résolution de problèmes, Contact client, Relation B2B, Suivi affaires, Prise de commande"
+    },
+    {
+      "year": "2012 - 2018",
+      "text": "Divers emplois",
+      "subtext": "Principalement en intérim, Lyon, France",
+      "description": "Manutention, Restauration, Accueil, Livraison, Nettoyage, et plus",
+      "competences": "Manutention, Restauration, Accueil, Livraison, Nettoyage, etc."
+    }
+  ]
