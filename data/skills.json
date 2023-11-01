@@ -1,0 +1,87 @@
+[
+  {
+    "name": "JavaScript",
+    "category": "Technologies",
+    "iconClass": "fab fa-js-square"
+  },
+  {
+    "name": "C# (.NET framework)",
+    "category": "Technologies",
+    "iconClass": "fas fa-code"
+  },
+  {
+    "name": "SQL (Oracle and MySQL)",
+    "category": "Technologies",
+    "iconClass": "fas fa-database"
+  },
+  {
+    "name": "Git",
+    "category": "Technologies",
+    "iconClass": "fab fa-git"
+  },
+  {
+    "name": "Windows PowerShell",
+    "category": "Technologies",
+    "iconClass": "fab fa-windows"
+  },
+  {
+    "name": "MongoDB",
+    "category": "Technologies",
+    "iconClass": "fas fa-database"
+  },
+  {
+    "name": "Node.js",
+    "category": "Technologies",
+    "iconClass": "fab fa-node"
+  },
+  {
+    "name": "Docker",
+    "category": "Technologies",
+    "iconClass": "fab fa-docker"
+  },
+  {
+    "name": "Kendo UI",
+    "category": "Librairies",
+    "iconClass": "fab fa-kendo-ui"
+  },
+  {
+    "name": "Bootstrap",
+    "category": "Librairies",
+    "iconClass": "fab fa-bootstrap"
+  },
+  {
+    "name": "NHibernate",
+    "category": "Librairies",
+    "iconClass": "fas fa-code-branch"
+  },
+  {
+    "name": "OpenXML",
+    "category": "Librairies",
+    "iconClass": "fas fa-file-excel"
+  },
+  {
+    "name": "Selenium",
+    "category": "Librairies",
+    "iconClass": "fas fa-bug"
+  },
+  {
+    "name": "Méthode agile",
+    "category": "Méthodologies",
+    "iconClass": "fab fa-leanpub"
+  },
+  {
+    "name": "JIRA",
+    "category": "Méthodologies",
+    "iconClass": "fab fa-jira"
+  },
+  {
+    "name": "Documentation WikiJS",
+    "category": "Méthodologies",
+    "iconClass": "fab fa-wikipedia-w"
+  },
+  {
+    "name": "Intégration continue via Jenkins",
+    "category": "Méthodologies",
+    "iconClass": "fab fa-jenkins"
+  }
+]

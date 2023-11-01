@@ -11050,7 +11050,7 @@ section.resume-section .resume-section-content {
   border: 2px solid #F5F7FA;
   background: #4DD0E1;
   margin-top: 10px;
-  z-index: 9999
+  z-index: 1
 }
 .timeline-content {
   width: 95%;
