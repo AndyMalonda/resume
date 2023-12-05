@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 function activateBootstrapScrollspy() {
   const sideNav = document.body.querySelector("#sideNav");
   if (sideNav) {
+    // eslint-disable-next-line no-new, no-undef
     new bootstrap.ScrollSpy(document.body, {
       target: "#sideNav",
       offset: 74,
@@ -37,26 +38,10 @@ function collapseResponsiveNavbar() {
 }
 
 /**
- * Opens a popup and hides it after 2.5 seconds.
- */
-function popUpCopie() {
-  const popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-
-  function finPopUp() {
-    popup.classList.toggle("hide");
-  }
-  setTimeout(finPopUp, 2500);
-}
-
-/**
  * Get the available date 3 months from the current date.
  * @returns {string} The formatted available date.
  */
 function getAvailableDate() {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth();
   const months = [
     "janvier",
     "février",
@@ -72,13 +57,13 @@ function getAvailableDate() {
     "décembre",
   ];
 
-  const availableDate = new Date(year, month + 3, 1);
-  const availableMonth = months[availableDate.getMonth()];
-  const availableYear = availableDate.getFullYear();
-  const preposition = /^[aeiouy]/i.test(availableMonth) ? "d'" : "de ";
-  const availableDateStr = `${preposition}${availableMonth} ${availableYear}`;
+  const availableDate = new Date();
+  availableDate.setMonth(availableDate.getMonth() + 3);
 
-  return availableDateStr;
+  const availableMonth = months[availableDate.getMonth()];
+  const preposition = /^[aeiouy]/i.test(availableMonth) ? "d'" : "de ";
+
+  return `${preposition}${availableMonth} ${availableDate.getFullYear()}`;
 }
 
 const availableDateSelector = document.getElementById("available-date");
