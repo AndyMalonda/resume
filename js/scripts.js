@@ -1,3 +1,4 @@
+//#region generic DOM manipulation functions
 /**
  * Initializes the page on DOM content load.
  */
@@ -38,30 +39,30 @@ function collapseResponsiveNavbar() {
 }
 
 /**
+ * Opens a popup and hides it after 2.5 seconds.
+ */
+function popUpCopie() {
+  const popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+
+  function finPopUp() {
+    popup.classList.toggle("hide");
+  }
+  setTimeout(finPopUp, 2500);
+}
+//#endregion
+
+//#region date related functions
+/**
  * Get the available date 3 months from the current date.
  * @returns {string} The formatted available date.
  */
 function getAvailableDate() {
-  const months = [
-    "janvier",
-    "février",
-    "mars",
-    "avril",
-    "mai",
-    "juin",
-    "juillet",
-    "août",
-    "septembre",
-    "octobre",
-    "novembre",
-    "décembre",
-  ];
+  const today = new Date();
+  const availableDate = new Date(today.getFullYear(), today.getMonth() + 3, 1);
 
-  const availableDate = new Date();
-  availableDate.setMonth(availableDate.getMonth() + 3);
-
-  const availableMonth = months[availableDate.getMonth()];
-  const preposition = /^[aeiouy]/i.test(availableMonth) ? "d'" : "de ";
+  const options = { month: "long", year: "numeric" };
+  const availableDateStr = availableDate.toLocaleDateString("fr-FR", options);
 
   return `${preposition}${availableMonth} ${availableDate.getFullYear()}`;
 }
@@ -72,6 +73,81 @@ availableDateSelector.innerText = availableDateStr;
 
 const timelineContainer = document.getElementById("timeline-container");
 
+function datesToDuration(startDate = null, endDate = null) {
+  const currentDate = new Date();
+
+  const getDurationInMonths = (start, end) => {
+    const startObj = new Date(start);
+    const endObj = end ? new Date(end) : currentDate;
+    return (
+      (endObj.getFullYear() - startObj.getFullYear()) * 12 +
+      (endObj.getMonth() - startObj.getMonth())
+    );
+  };
+
+  const durationInMonths = startDate
+    ? getDurationInMonths(startDate, endDate)
+    : null;
+
+  if (startDate && endDate) {
+    return durationToString(durationInMonths);
+  } else if (startDate && !endDate) {
+    return durationToString(durationInMonths);
+  } else if (!startDate && endDate) {
+    return endDate.split("-")[0]; // Extract year from endDate
+  } else {
+    return "";
+  }
+}
+
+function durationToString(durationInMonths) {
+  const years = Math.floor(durationInMonths / 12);
+  const months = durationInMonths % 12;
+
+  const yearStr = years > 0 ? `${years} an${years > 1 ? "s" : ""}` : "";
+  const monthStr = months > 0 ? `${months} mois` : "";
+
+  return `${yearStr}${years > 0 && months > 0 ? " et " : ""}${monthStr}`;
+}
+
+function dateToString(date, precision = 6) {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const dateStr = date.toLocaleDateString("fr-FR", options);
+
+  return dateStr
+    .split(" ")
+    .slice(0, precision)
+    .filter((str) => str !== "")
+    .join(" ");
+}
+
+function datesToString(startDate = null, endDate = null) {
+  // determine precision based on date length
+  // ex 2023 is year, 2023-05 is month, 2023-05-01 is day
+  const precision = startDate ? startDate.length : endDate.length;
+
+  if (startDate) {
+    const startDateObj = new Date(startDate);
+    const endDateObj = endDate ? new Date(endDate) : null;
+
+    const startDateStr = dateToString(startDateObj, precision);
+    const endDateStr = endDate
+      ? dateToString(endDateObj, precision)
+      : "présent";
+
+    return endDate
+      ? `${startDateStr} - ${endDateStr}`
+      : `depuis ${startDateStr}`;
+  } else if (endDate) {
+    const endDateObj = new Date(endDate);
+    return dateToString(endDateObj, precision);
+  } else {
+    return "";
+  }
+}
+//#endregion
+
+//#region timeline
 /**
  * Generates HTML elements for the timeline dynamically.
  * @param {Array} timelineData - An array of timeline data.
@@ -92,8 +168,19 @@ function generateTimeline(timelineData) {
     const timelineContent = document.createElement("div");
     timelineContent.classList.add("timeline-content", "shadow");
 
-    const yearHeading = document.createElement("h3");
-    yearHeading.textContent = entry.year;
+    const datesHeading = document.createElement("h3");
+    // prevents dates from being displayed in reverse order in the timeline
+    datesHeading.dir = "ltr";
+
+    const dateRange = datesToString(entry.startDate, entry.endDate);
+    const durationStr = datesToDuration(entry.startDate, entry.endDate);
+
+    // only dispay date range for education entries
+    if (entry.type === "education") {
+      datesHeading.textContent = dateRange;
+    } else {
+      datesHeading.textContent = `${dateRange} (${durationStr})`;
+    }
 
     const textSpan = document.createElement("span");
     textSpan.textContent = entry.text;
@@ -114,7 +201,7 @@ function generateTimeline(timelineData) {
 
     if (entry.description) timelineContent.style.cursor = "pointer";
 
-    timelineContent.appendChild(yearHeading);
+    timelineContent.appendChild(datesHeading);
     timelineContent.appendChild(textSpan);
     timelineContent.appendChild(subtextParagraph);
     timelineContent.appendChild(descriptionParagraph);
@@ -164,6 +251,9 @@ function displaySkills(competences) {
     skillsContainer.appendChild(categoryRow);
   });
 }
+//#endregion
+
+//#region data fetching
 
 // Load data from a JSON file
 fetch("data/data.json")
@@ -187,3 +277,4 @@ fetch("data/skills.json")
   .catch((error) => {
     console.error("An error occurred while loading the JSON file:", error);
   });
+//#endregion

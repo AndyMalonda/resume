@@ -1,28 +1,36 @@
 {
   "experiences": [
     {
-      "year": "Depuis avril 2022",
+      "type": "work",
+      "startDate": "2022-04",
+      "endDate": null,
       "text": "Développeur logiciel",
       "subtext": "Vertech', Chalon-sur-Saône, France",
       "description": "Conception d'applications complexes pour l'industrie de la verrerie, Test et déploiement de solutions de supervision et de contrôle qualité, Évolution technologique et fonctionnelle, Membre de l'équipe BDD et des outils de reporting",
       "competences": "Javascript, C# (.NET framework), SQL (Oracle and MySQL), Git, Windows PowerShell, MongoDB, Node.js, Docker, Kendo UI, Bootstrap, NHibernate, OpenXML, Selenium, Méthode agile, JIRA, Documentation WikiJS, Intégration continue via Jenkins"
     },
     {
-      "year": "octobre 2019 - août 2020",
+      "type": "work",
+      "startDate": "2019-10",
+      "endDate": "2020-08",
       "text": "Représentant service client",
       "subtext": "Uber, Lisbonne, Portugal",
       "description": "COE Specialist II - Point de contact de l'équipe en charge des coursiers partenaires Uber Eats",
       "competences": "Appels inbound and outbound, Traitement de tickets, Mentoring, Communication interne, Conception et rédaction de process"
     },
     {
-      "year": "mars 2018 - octobre 2019",
+      "type": "work",
+      "startDate": "2018-03",
+      "endDate": "2019-10",
       "text": "Représentant service client",
       "subtext": "Teleperformance, Lisbonne, Portugal",
       "description": "Travail pour une grande enseigne de voyages en ligne et une entreprise de vente de fournitures de bureau destinée aux professionnels",
       "competences": "Résolution de problèmes, Contact client, Relation B2B, Suivi affaires, Prise de commande"
     },
     {
-      "year": "2012 - 2018",
+      "type": "work",
+      "startDate": "2012",
+      "endDate": "2018",
       "text": "Divers emplois",
       "subtext": "Principalement en intérim, Lyon, France",
       "description": "Manutention, Restauration, Accueil, Livraison, Nettoyage, et plus",
@@ -31,27 +39,37 @@
   ],
   "education": [
     {
-      "year": "Décembre 2021 - avril 2022",
+      "type": "education",
+      "startDate": "2021-12",
+      "endDate": "2022-04",
       "text": "Développeur web et web mobile",
       "subtext": "OpenClassrooms"
     },
     {
-      "year": "2017 - 2015",
+      "type": "education",
+      "startDate": "2015",
+      "endDate": "2017",
       "text": "BTS Communication",
       "subtext": "ICOGES Lyon, puis Lycée la Martinière Duchère"
     },
     {
-      "year": "2013 - 2014",
+      "type": "education",
+      "startDate": "2013",
+      "endDate": "2014",
       "text": "L1 Lettres Modernes",
       "subtext": "Université Lyon 3"
     },
     {
-      "year": "2012 - 2013",
+      "type": "education",
+      "startDate": "2012",
+      "endDate": "2013",
       "text": "L1 Anthropologie",
       "subtext": "Université Lyon 2"
     },
     {
-      "year": "2012",
+      "type": "education",
+      "startDate": null,
+      "endDate": "2012",
       "text": "Bac Littéraire",
       "subtext": "Lycée de la Plaine de l'Ain"
     }
